@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
@@ -19,19 +20,8 @@ const mapDispatchToProps = dispatch => ({
   toggleCartHidden: () => dispatch(toggleCartHidden())
 });
 
-// using a selector this way always fire mapStateToProps as state is a new object - bad for performance
-// moved this functionality into cart.selectors and useing the new mapStateToProps below passing in the state
-
-/* const mapStateToProps = ({ cart: { cartItems } }) => {
-  console.log('I am being called')
-  return {
-    itemCount: cartItems.reduce((accumaletedQuantity, cartItem) => accumaletedQuantity + cartItem.quantity,  0)
-  };  
-}; */
-
-// using cart.selectors
-const mapStateToProps = state => ({
-  itemCount: selectCartItemsCount(state)
+const mapStateToProps = createStructuredSelector({
+  itemCount: selectCartItemsCount
 });
 
 export default connect(
