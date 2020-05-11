@@ -13,25 +13,23 @@ import {
   } from './collection-item.styles';
 
 const CollectionItem = ({ item, addItem }) => {
-    const { name, price, imageUrl } = item
+    const { name, price, imageUrl } = item;
+
     return (
         <CollectionItemContainer>
-        <BackgroundImage
-            className='image'
-            style={{
-                backgroundImage: `url(${imageUrl})`
-            }}
-        />
+        <BackgroundImage className='image' imageUrl={imageUrl} />
         <CollectionFooterContainer>
             <NameContainer>{name}</NameContainer>
             <PriceContainer>{price}</PriceContainer>
         </CollectionFooterContainer>
-        <AddButton onClick={() => addItem(item)} inverted>Add to cart</AddButton>
-    </CollectionItemContainer>
-    )   
+        <AddButton onClick={() => addItem(item)} inverted>
+            Add to cart
+        </AddButton>
+        </CollectionItemContainer>
+    );
 };
-
-const mapDispatchToProps = dispatch => ({
+  
+  const mapDispatchToProps = dispatch => ({
     addItem: item => dispatch(addItem(item))
   });
   
