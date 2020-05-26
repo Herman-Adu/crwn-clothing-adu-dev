@@ -11,20 +11,18 @@ import {
 
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
   <MenuItemContainer
-    className={`${size} menu-item`}
+    size={size}
     onClick={() => history.push(`${match.url}${linkUrl}`)}
   >
     <BackgroundImageContainer
       className='background-image'
-      style={{
-        backgroundImage: `url(${imageUrl})`
-      }}
+      imageUrl={imageUrl}
     />
-    <ContentContainer>
+    <ContentContainer className='content'>
       <ContentTitle>{title.toUpperCase()}</ContentTitle>
       <ContentSubtitle>SHOP NOW</ContentSubtitle>
     </ContentContainer>
-  </MenuItemContainer>
+</MenuItemContainer>
 );
 
 export default withRouter(MenuItem);
