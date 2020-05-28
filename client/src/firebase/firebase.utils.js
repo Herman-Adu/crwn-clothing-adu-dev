@@ -20,9 +20,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
     const userRef = firestore.doc(`users/${userAuth.uid}`);
 
-    const snapShot = await userRef.get();
-
-    //console.log(snapShot);
+    const snapShot = await userRef.get();    
 
     if (!snapShot.exists) {
         const { displayName, email } = userAuth;
@@ -44,6 +42,26 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     }
     return userRef; 
 };
+
+
+export const getUserCartRef = async userId => {
+    
+    const cartsRef = firestore.collection('carts').where('userId', '==', userId);
+
+    const snapShot = await cartsRef.get();
+
+    //console.log(snapShot);
+
+    if (snapShot.empty) {
+        const cartDocRef = firestore.collection('carts').doc();
+        await cartDocRef.set({ userId, cartItems: [] });
+        return cartsRef;
+    }
+    else {
+        return snapShot.docs[0].ref;
+    }
+};
+
 
 // util method to programmatically upload a collection and documents i.e. shop data to firebase.
 export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
