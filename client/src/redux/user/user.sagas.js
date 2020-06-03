@@ -19,7 +19,7 @@ import {
 } from '../../firebase/firebase.utils';
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
-  console.log(userAuth);
+  //console.log(userAuth);
   try {
     const userRef = yield call(
       createUserProfileDocument,

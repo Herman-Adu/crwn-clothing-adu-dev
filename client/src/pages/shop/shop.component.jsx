@@ -13,7 +13,7 @@ const CollectionsOverviewContainer = lazy(() =>
 );
 
 const CollectionPageContainer = lazy(() => 
-    import( '../../pages/collection/collection.component')
+    import( '../collection/collection.container')
 );
 
 const ShopPage = ({ fetchCollectionsStart, match }) => {
