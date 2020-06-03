@@ -66,7 +66,7 @@ export const getUserCartRef = async userId => {
 // util method to programmatically upload a collection and documents i.e. shop data to firebase.
 export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
     const collectionRef = firestore.collection(collectionKey);
-    console.log(collectionRef)
+    //console.log(collectionRef)
 
     const batch = firestore.batch();
     objectsToAdd.forEach(obj => {
