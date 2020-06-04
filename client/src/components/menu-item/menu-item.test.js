@@ -7,6 +7,7 @@ describe('MenuItem component', () => {
     let wrapper;
     let mockMatch;
     let mockHistory;
+    //let mockTitle;
     const linkUrl = '/jackets';
     const size = 'large';
     const imageUrl = 'testimage';
@@ -22,7 +23,7 @@ describe('MenuItem component', () => {
 
         const mockProps = {
         match: mockMatch,
-        history: mockHistory,
+        history: mockHistory,       
         linkUrl,
         size,
         title: 'jackets',
