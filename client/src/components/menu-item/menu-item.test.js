@@ -39,13 +39,13 @@ describe('MenuItem component', () => {
 
     it('should call history.push with the right string when MenuItemContainer clicked', () => {
         wrapper.find('MenuItemContainer').simulate('click');
-        console.log(linkUrl);
+        //console.log(linkUrl);
 
         expect(mockHistory.push).toHaveBeenCalledWith(`${mockMatch.url}${linkUrl}`);
     });
 
     it('should pass size to MenuItemContainer as the prop size', () => {
-        console.log(size);
+        //console.log(size);
         expect(wrapper.find('MenuItemContainer').prop('size')).toBe(size)
     })
 });
