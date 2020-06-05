@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { CollectionItem } from './collection-item.component';
-//import { addItem } from '../../redux/cart/cart.actions';
 
 describe('CollectionItem component', () => {
     let wrapper;
