@@ -14,7 +14,7 @@ describe('Header component', () => {
         const mockProps = {
             hidden: true,
             currentUser: {
-            uid: '123'
+                uid: '123'
             },
             signOutStart: mockSignOutStart
         }
@@ -49,8 +49,7 @@ describe('Header component', () => {
             const newWrapper = shallow(<Header {...mockProps} />);
 
             expect(newWrapper.find('OptionLink').at(2).text()).toBe('SIGN IN');
-        });
-        
+        });        
     });
 
     describe('if hidden is true', () => {
