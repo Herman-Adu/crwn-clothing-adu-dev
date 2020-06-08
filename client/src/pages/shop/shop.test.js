@@ -59,11 +59,13 @@ describe('ShopPage', () => {
         );
     });
 
-    it('should render ShopPage component', () => {
-        expect(wrapper).toMatchSnapshot();
-    });    
+    describe('ShopPage compponent', () => {
+        it('should call mockFetchCollectionsStart', () => {
+            expect(mockFetchCollectionsStart).toHaveBeenCalled();
+        });
 
-    it('should render ShopPage component', () => {
-        expect(mockFetchCollectionsStart).toHaveBeenCalled();
-    });
+        it('should render ShopPage component', () => {
+            expect(wrapper).toMatchSnapshot();
+        });
+    });    
 });
