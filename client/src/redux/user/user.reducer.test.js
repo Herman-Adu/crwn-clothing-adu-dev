@@ -55,6 +55,4 @@ describe('userReducer', () => {
             payload: mockError
         }).error).toBe(mockError)
     });
-
-
 });
