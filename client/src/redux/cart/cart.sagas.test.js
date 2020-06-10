@@ -102,32 +102,10 @@ describe('update cart in firebase saga', () => {
 
     // todo
     it('should call cartRef.update cart items', () => {
-
-        const mockCartRef = { id: '123' }
-        const mockUserId = { id: '123' }
-        
-        const mockCartItems = {
-            imageUrl: 'www.testImageUrl.com',
-            price: 10,
-            name: 'jackets',
-            quantity: 1,
-            userId: 123            
-       }         
-
-       //expect(generator.next(mockCartRef.update).value).toEqual(cartRef.update({ cartItems }))       
-       //expect(generator.next(mockCartItems).value).toEqual(cartRef.update({ cartItems }))
-       //expect(generator.next({ mockCartItems }).value).toEqual(cartRef.update({ cartItems }))
     });
 
     
-    it('should fire updateCartInFirebaseFailure if update cart in firebase fails at any point', () => {
-
-        const newGenerator = updateCartInFirebase();
-
-        newGenerator.next();
-
-        //expect(newGenerator.throw({message: 'an error has occurred'}).value).toEqual('an error has occurred');
-        //expect(newGenerator.throw({message: 'an error has occurred'}).value).toEqual(put(updateCartInFirebaseFailure('an error has occurred')))
+    it('should throw an error if update cart in firebase fails at any point', () => {
     });
 });
 
@@ -157,19 +135,9 @@ describe('check cart from firebase saga', () => {
     });
 
     it('should get the cart snapshot if cart ref exist', () => {
-
-        const cartRef = {
-            id: 123
-        }
-
-        //expect(generator.next(cartRef).value).toEqual(cartRef.get());
     });
 
-    it('should set the cart from firebase', () => {
-
-        const cartSnapshot = { }
-
-        // expect(generator.next(cartSnapshot).value).toEqual(put(setCartFromFirebase(cartSnapshot.data().cartItems)));
+    it('should set the cart from firebase', () => {        
     });
 });
 
