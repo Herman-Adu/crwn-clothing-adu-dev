@@ -21,7 +21,7 @@ export function* updateCartInFirebase() {
             yield cartRef.update({ cartItems });
         }
         catch (error) {
-            console.log(error);
+           console.log(error);
         }
     }
 }

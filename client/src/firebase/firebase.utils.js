@@ -53,8 +53,17 @@ export const getUserCartRef = async userId => {
     //console.log(snapShot);
 
     if (snapShot.empty) {
+
         const cartDocRef = firestore.collection('carts').doc();
-        await cartDocRef.set({ userId, cartItems: [] });
+
+        try {
+            await cartDocRef.set({ userId, cartItems: [] });
+        }
+        catch (error)
+        {
+            console.log('error creating user', error.message);
+        }
+        
         return cartsRef;
     }
     else {
